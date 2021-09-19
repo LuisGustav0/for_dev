@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
 abstract class HttpClient {
-  Future<void> request({
+  Future<void>? request({
     required String url,
     required String method
   });
@@ -20,7 +20,7 @@ class RemoteAuthentication {
     required this.url
   });
 
-  Future<void> auth() async {
+  Future<void>? auth() async {
     await httpClient.request(url: url, method: 'post');
   }
 }
